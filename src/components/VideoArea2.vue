@@ -1,7 +1,7 @@
 <template>
   <div>
     <div>
-      <p class="timerVideo" v-show="timevideo">
+      <p class="timerVideo" v-show="timevideo>0">
         <v-icon color="red" large class="mr-1">mdi-radiobox-marked</v-icon>
         {{timevideo}}
       </p>
@@ -88,7 +88,8 @@ export default {
         if (self.timevideo <= 0) {
           console.log("stopping");
           self.mediaRecorder.stop();
-          clearInterval(self.videoTimer);
+          self.videoTimer=null;
+          clearInterval(this);
         } else {
         }
       }, 1000);
