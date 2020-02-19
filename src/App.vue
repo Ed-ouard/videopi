@@ -29,15 +29,8 @@
       </v-btn>
     </v-app-bar>
 
-    <v-content>
-      <v-row>
-        <v-col :cols="12" :md="6">
-      <VideoArea/>
-        </v-col>
-        <v-col :cols="12" :md="6">
-        </v-col>
-      </v-row>
-
+    <v-content class="pa-0">
+      <router-view></router-view>
     </v-content>
   </v-app>
 </template>
