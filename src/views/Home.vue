@@ -1,7 +1,7 @@
 <template>
   <div class="home">    
       <v-row>
-        <v-col :cols="12" :md="6">      
+        <v-col :cols="12" :md="12">      
           <VideoArea />
         </v-col>
         <v-col :cols="12" :md="6">
