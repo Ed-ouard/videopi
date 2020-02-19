@@ -24,7 +24,7 @@
         target="_blank"
         text
       >
-        <span class="mr-2">V.0.0.3</span>
+        <span class="mr-2">V.0.0.4</span>
         <v-icon>mdi-open-in-new</v-icon>
       </v-btn>
     </v-app-bar>

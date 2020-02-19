@@ -10,12 +10,12 @@
       <video v-show="!selectedPicture" ref="video" id="video" width="640" height="480" autoplay></video>
       <img class="picture" v-show="selectedPicture" :src="selectedPicture" />
     </div>
-    <div>
+    <div v-show="!videoTimer && !timecountdown">
       <v-btn v-on:click="capture()">Prendre une {{ selectedPicture ? 'autre' : ''}} Photo</v-btn>
       <v-btn v-on:click="captureVideo()">Faire une Vidéo</v-btn>
     </div>
     <canvas ref="canvas" id="canvas" width="640" height="480"></canvas>
-    <ul>
+    <ul v-show="!videoTimer && !timecountdown">
       <li v-for="(c, i) in captures" :key="'c'+i">
         <img class="picture" v-bind:src="c" height="50" @click="selectPicture(c)" />
       </li>
@@ -72,6 +72,7 @@ export default {
       }
     },
     captureVideo() {
+      this.selectedPicture = null;
       var options = { mimeType: "video/webm; codecs=vp9" };
       this.record = this.$refs.video.captureStream(25);
       console.log(this.record);
